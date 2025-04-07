@@ -9,10 +9,14 @@ import Home from "./components/Home";
 const App = () => {
   return (
     <Router>
-      
-      <Home />
       <Routes>
-        {/* Add other routes here */}
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/about" element={<About />} />
+        <Route path="/work" element={<Work />} />
+        <Route path="expertise" element={<Expertise />} />
+        <Route path="/contact" element={<Contact />} /> */}
+
+        
       </Routes>
     </Router>
   );
