@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { NavBar } from './NavBar';
 import sample01 from '../assets/videos/sample01.mp4';
 import icon from '../assets/icons/icon.png';
+import LogoSection from './LogoSection';
 
 function Home() {
     const videoRef = useRef(null);
@@ -115,11 +116,7 @@ function Home() {
             </div>
 
             {/* Purple Section After Video */}
-            <div className="bg-[#590080] h-screen flex items-center justify-center px-10 py-16 text-center">
-                <h1 className="text-9xl md:text-9xl font-bold text-white ">
-                    We design, build and ship world-class digital products for forward-thinking brands.
-                </h1>
-            </div>
+            <LogoSection />
 
         </div>
     );
