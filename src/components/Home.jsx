@@ -7,9 +7,14 @@ function Home() {
     const [isPaused, setIsPaused] = useState(false);
     const [isMuted, setIsMuted] = useState(true);
     const [scrollY, setScrollY] = useState(0);
+    const [videoHeight, setVideoHeight] = useState(0);
 
-    // Smooth scroll tracking with requestAnimationFrame
     useEffect(() => {
+        // Get video height to ensure smooth scaling
+        if (videoRef.current) {
+            setVideoHeight(videoRef.current.clientHeight);
+        }
+
         let ticking = false;
 
         const handleScroll = () => {
@@ -43,13 +48,14 @@ function Home() {
         setIsMuted(videoRef.current.muted);
     };
 
-    // Scale video from 1 to 2x based on scroll
-    const scale = Math.min(1 + scrollY / 800, 2);
-    const bgColor = scrollY > 1000 ? 'bg-purple-300' : 'bg-[#f3f3e9]';
+    // Adjust the scale based on how much of the video is in the viewport
+    const scale = Math.min(1 + scrollY / 1500, 2);
+
+    const bgColor = scrollY > 1600 ? 'bg-[#590080]' : 'bg-[#f3f3e9]';
 
     return (
         <div>
-            {/* Fixed Nav */}
+            {/* Navbar */}
             <div className="flex items-center justify-between w-full p-4 bg-[#f3f3e9] top-0 z-50">
                 <div className="font-bold text-xl text-black">HUMAAAN</div>
                 <div className="pr-140">
@@ -60,21 +66,22 @@ function Home() {
                 </div>
             </div>
 
-            {/* Hero Section */}
+            {/* Hero Text */}
             <div className="bg-[#f3f3e9] px-10 pb-75 pt-80 py-16">
                 <h1 className="text-9xl md:text-9xl font-bold text-green-900 mb-8">
                     Extraordinary <br /> Digital Experiences
                 </h1>
             </div>
 
-            {/* Video Section with smooth scaling and bg color transition */}
-            <div className={`p-10 md:p-20 relative transition-colors duration-500 ${bgColor}`}>
+            {/* Video Section */}
+            <div className={`p-20 md:p-20 relative transition-colors duration-700 ${bgColor}`}>
                 <video
                     ref={videoRef}
                     className="w-full rounded-3xl shadow-lg"
                     style={{
                         transform: `scale(${scale})`,
-                        transition: 'transform 0.5s ease-out',
+                        transition: 'transform 0.6s ease-out',
+                        objectFit: 'cover', // Make sure video covers the area smoothly
                     }}
                     src={sample01}
                     autoPlay
@@ -83,7 +90,7 @@ function Home() {
                     playsInline
                 />
 
-                {/* Custom Controls */}
+                {/* Video Controls */}
                 <div className="absolute bottom-10 right-10 flex">
                     <button
                         onClick={togglePlay}
@@ -99,6 +106,14 @@ function Home() {
                     </button>
                 </div>
             </div>
+
+            {/* Purple Section After Video */}
+            <div className="bg-[#590080] h-screen flex items-center justify-center pt-150 px-10 py-24 text-center">
+                <h1 className="text-9xl md:text-9xl font-bold text-white ">
+                    We design, build and ship world-class digital products for forward-thinking brands.
+                </h1>
+            </div>
+
         </div>
     );
 }
