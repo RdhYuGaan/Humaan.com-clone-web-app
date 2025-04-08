@@ -3,17 +3,16 @@ import { NavBar } from './NavBar';
 import sample01 from '../assets/videos/sample01.mp4';
 import icon from '../assets/icons/icon.png';
 import LogoSection from './LogoSection';
-import Pic1 from '../assets/pictures/pic1.jpg';
-import sample02 from '../assets/videos/sample02.mp4';
 import Pictures from './Pictures';
+import HeroAbout from './HeroAbout';
 
 function Home() {
     const videoRef = useRef(null);
+    const sectionRef = useRef(null);
     const [isPaused, setIsPaused] = useState(false);
     const [isMuted, setIsMuted] = useState(true);
-
-
-
+    const [scale, setScale] = useState(1);
+    const [bgColor, setBgColor] = useState('#f3f3e9');
 
     const togglePlay = () => {
         if (!videoRef.current) return;
@@ -32,44 +31,74 @@ function Home() {
         setIsMuted(videoRef.current.muted);
     };
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const section = sectionRef.current;
+            if (!section) return;
 
+            const rect = section.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
 
-    const bgColor = scrollY > 1600 ? 'bg-[#590080]' : 'bg-[#f3f3e9]';
+            if (rect.top < windowHeight && rect.bottom > 0) {
+                const visibleHeight = Math.min(windowHeight, rect.bottom) - Math.max(0, rect.top);
+                const visibilityRatio = visibleHeight / rect.height;
+
+                if (visibilityRatio >= 0.5) {
+                    const newScale = Math.min(1 + Math.min(visibilityRatio - 0.5, 0.5), 1.2);
+                    setScale(newScale);
+                    setBgColor(visibilityRatio >= 0.95 ? '#b488f1' : '#f3f3e9');
+                } else {
+                    setScale(1);
+                    setBgColor('#f3f3e9');
+                }
+            } else {
+                setScale(1);
+                setBgColor('#f3f3e9');
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     return (
         <div>
             {/* Navbar */}
             <div className="flex items-center justify-between w-full p-4 bg-[#f3f3e9] top-0 z-50">
-                <div className="font-bold text-xl  text-black">HUMAAAN</div>
+                <div className="font-bold text-xl text-black">HUMAAAN</div>
                 <div className="flex-grow flex justify-center">
                     <NavBar />
                 </div>
-                <div className="w-24 h-24 flex  items-center justify-center">
-                    <img
-                        className=" cursor-pointer"
-                        src={icon}
-                        alt="icon" />
+                <div className="w-24 h-24 flex items-center justify-center">
+                    <img className="cursor-pointer" src={icon} alt="icon" />
                 </div>
             </div>
 
             {/* Hero Text */}
-            <div className="bg-[#f3f3e9] px-10 pb-75 pt-80 py-16">
-                <h1 className="text-9xl md:text-9xl font-bold text-green-900 mb-8">
+            <div className="bg-[#f3f3e9] px-10 pt-80 py-16">
+                <h1 className="text-9xl font-bold text-green-900 mb-8">
                     Extraordinary <br /> Digital Experiences
                 </h1>
             </div>
 
-            {/* Video Section */}
-            <div className={`p-20 md:p-20 relative bg-[#f3f3e9] transition-colors duration-700 `}>
+            {/* Video Section with Scroll Animation */}
+            <div
+                ref={sectionRef}
+                className="p-20 md:p-20 relative transition-colors duration-700"
+                style={{ backgroundColor: bgColor }}
+            >
                 <div className="relative w-full">
                     <video
                         ref={videoRef}
-                        className="w-full rounded-3xl shadow-lg"
+                        className="w-full rounded-3xl shadow-lg transition-transform duration-500"
                         style={{
+                            transform: `scale(${scale})`,
+                            transformOrigin: 'center center',
                         }}
                         src={sample01}
                         autoPlay
                         loop
+                        muted={isMuted}
                         playsInline
                     />
 
@@ -79,23 +108,26 @@ function Home() {
                             onClick={togglePlay}
                             className="bg-black/50 text-white px-4 py-2 rounded-tl-full rounded-bl-full shadow hover:bg-black/20"
                         >
-                            {isPaused ? ' ▶️' : ' ⏸️'}
+                            {isPaused ? '▶️' : '⏸️'}
                         </button>
                         <button
                             onClick={toggleMute}
-                            className="bg-black/50 text-white px-4 py-2 rounded-tr-full rounded-br-full shadow hover:bg-black/20 "
+                            className="bg-black/50 text-white px-4 py-2 rounded-tr-full rounded-br-full shadow hover:bg-black/20"
                         >
-                            {isMuted ? ' 🔊' : '🔇'}
+                            {isMuted ? '🔊' : '🔇'}
                         </button>
                     </div>
                 </div>
             </div>
 
-            {/* logo page */}
+            {/* Logo Section */}
             <LogoSection />
-            {/* pictures page */}
+
+            {/* Pictures Section */}
             <Pictures />
 
+            <HeroAbout />
+            
         </div>
     );
 }

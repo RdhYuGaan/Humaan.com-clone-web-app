@@ -11,7 +11,7 @@ export const NavBar = () => {
   };
 
   return (
-    <div className="bg-white fixed rounded-full px-6 py-2 flex gap-4">
+    <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-white rounded-full px-6 py-2 flex gap-4 ">
       <button
         onClick={() => handleNavigation('/')}
         className={` font-bold cursor-pointer p-2 rounded-2xl 

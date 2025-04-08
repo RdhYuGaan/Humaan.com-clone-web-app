@@ -1,138 +1,60 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { NavBar } from './NavBar';
-import sample01 from '../assets/videos/sample01.mp4';
-import icon from '../assets/icons/icon.png';
-import LogoSection from './LogoSection';
-import Pictures from './Pictures';
+import React from 'react'
+import sample02 from '../assets/videos/sample02.mp4'
+import Pic1 from '../assets/pictures/pic1.jpg'
+import Pic2 from '../assets/pictures/pic2.jpeg'
+import Pic3 from '../assets/pictures/pic3.jpeg'
+import Pic4 from '../assets/pictures/pic4.jpeg'
 
-function Home() {
-    const videoRef = useRef(null);
-    const sectionRef = useRef(null);
-    const [isPaused, setIsPaused] = useState(false);
-    const [isMuted, setIsMuted] = useState(true);
-    const [scale, setScale] = useState(1);
-    const [bgColor, setBgColor] = useState('#f3f3e9');
-
-    const togglePlay = () => {
-        if (!videoRef.current) return;
-        if (videoRef.current.paused) {
-            videoRef.current.play();
-            setIsPaused(false);
-        } else {
-            videoRef.current.pause();
-            setIsPaused(true);
-        }
-    };
-
-    const toggleMute = () => {
-        if (!videoRef.current) return;
-        videoRef.current.muted = !videoRef.current.muted;
-        setIsMuted(videoRef.current.muted);
-    };
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const section = sectionRef.current;
-            if (!section) return;
-
-            const rect = section.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
-
-            if (rect.top < windowHeight && rect.bottom > 0) {
-                const visibleHeight = Math.min(windowHeight, rect.bottom) - Math.max(0, rect.top);
-                const visibilityRatio = visibleHeight / rect.height;
-
-                // When half or more is visible, scale up
-                if (visibilityRatio >= 0.5) {
-                    const newScale = 1 + Math.min(visibilityRatio - 0.5, 0.5); // up to scale 1.5
-                    setScale(newScale);
-
-                    // Change background when fully visible and scaled
-                    if (visibilityRatio >= 0.95) {
-                        setBgColor('#b488f1');
-                    } else {
-                        setBgColor('#f3f3e9');
-                    }
-                } else {
-                    // Scale down back to 1 if less than half visible
-                    setScale(1);
-                    setBgColor('#f3f3e9');
-                }
-            } else {
-                setScale(1);
-                setBgColor('#f3f3e9');
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
+const Pictures = () => {
     return (
-        <div>
-            {/* Navbar */}
-            <div className="flex items-center justify-between w-full p-4 bg-[#f3f3e9] top-0 z-50">
-                <div className="font-bold text-xl text-black">HUMAAAN</div>
-                <div className="flex-grow flex justify-center">
-                    <NavBar />
-                </div>
-                <div className="w-24 h-24 flex items-center justify-center">
-                    <img className="cursor-pointer" src={icon} alt="icon" />
-                </div>
-            </div>
-
-            {/* Hero Text */}
-            <div className="bg-[#f3f3e9] px-10 pt-80 py-16">
-                <h1 className="text-9xl font-bold text-green-900 mb-8">
-                    Extraordinary <br /> Digital Experiences
-                </h1>
-            </div>
-
-            {/* Video Section with Scroll Animation */}
-            <div
-                ref={sectionRef}
-                className={`p-20 md:p-20 relative transition-colors duration-700`}
-                style={{ backgroundColor: bgColor }}
-            >
-                <div className="relative w-full">
-                    <video
-                        ref={videoRef}
-                        className="w-full rounded-3xl shadow-lg transition-transform duration-500"
-                        style={{
-                            transform: `scale(${scale})`,
-                            transformOrigin: 'center center',
-                        }}
-                        src={sample01}
-                        autoPlay
-                        loop
-                        muted={isMuted}
-                        playsInline
-                    />
-
-                    {/* Video Controls */}
-                    <div className="absolute bottom-10 right-10 flex z-10">
-                        <button
-                            onClick={togglePlay}
-                            className="bg-black/50 text-white px-4 py-2 rounded-tl-full rounded-bl-full shadow hover:bg-black/20"
-                        >
-                            {isPaused ? '▶️' : '⏸️'}
-                        </button>
-                        <button
-                            onClick={toggleMute}
-                            className="bg-black/50 text-white px-4 py-2 rounded-tr-full rounded-br-full shadow hover:bg-black/20"
-                        >
-                            {isMuted ? '🔊' : '🔇'}
-                        </button>
+        <div className='bg-[#b488f1] min-h-screen flex flex-col items-center px-10 py-16 space-y-16'>
+            
+            {/* Pic1 with video inside */}
+            <div className='relative w-[1600px] h-[1000px] rounded-3xl shadow-xl overflow-hidden'>
+                <img
+                    src={Pic1}
+                    alt="icon"
+                    className='absolute top-0 left-0 w-full h-full object-cover'
+                />
+                <div className='relative w-full h-full p-10'>
+                    <div className='w-full h-full rounded-3xl overflow-hidden'>
+                        <video
+                            className='w-full h-full object-cover rounded-3xl'
+                            src={sample02}
+                            autoPlay
+                            loop
+                            muted
+                        />
                     </div>
                 </div>
             </div>
 
-            {/* logo page */}
-            <LogoSection />
-            {/* pictures page */}
-            <Pictures />
+            {/* Grid Section */}
+            <div className='w-[1600px] h-[950px]'>
+                <section className="grid grid-cols-1 md:grid-cols-2 gap-16 h-full">
+                    <img
+                        src={Pic2}
+                        alt="Slim laptop"
+                        className="w-full h-full object-cover rounded-3xl shadow-lg"
+                    />
+                    <img
+                        src={Pic3}
+                        alt="Futuristic car"
+                        className="w-full h-full object-cover rounded-3xl shadow-lg"
+                    />
+                </section>
+            </div>
+
+            {/* Bottom Picture (Pic4) */}
+            <div className='w-[1600px] h-[1000px] rounded-3xl shadow-xl overflow-hidden'>
+                <img
+                    src={Pic4}
+                    alt="icon"
+                    className='w-full h-full object-cover rounded-3xl'
+                />
+            </div>
         </div>
-    );
+    )
 }
 
-export default Home;
+export default Pictures
