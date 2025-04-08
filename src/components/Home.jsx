@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { NavBar } from './NavBar';
+import Header from './Header';
 import sample01 from '../assets/videos/sample01.mp4';
-import icon from '../assets/icons/icon.png';
+
 import LogoSection from './LogoSection';
 import Pictures from './Pictures';
 import HeroAbout from './HeroAbout';
@@ -63,17 +63,8 @@ function Home() {
 
     return (
         <div>
-            {/* Navbar */}
-            <div className="flex items-center justify-between w-full p-4 bg-[#f3f3e9] top-0 z-50">
-                <div className="font-bold text-xl text-black">HUMAAAN</div>
-                <div className="flex-grow flex justify-center">
-                    <NavBar />
-                </div>
-                <div className="w-24 h-24 flex items-center justify-center">
-                    <img className="cursor-pointer" src={icon} alt="icon" />
-                </div>
-            </div>
-
+            {/* header section */}
+            <Header />
             {/* Hero Text */}
             <div className="bg-[#f3f3e9] px-10 pt-80 py-16">
                 <h1 className="text-9xl font-bold text-green-900 mb-8">
@@ -125,9 +116,9 @@ function Home() {
 
             {/* Pictures Section */}
             <Pictures />
-
+            {/* hero about section */}
             <HeroAbout />
-            
+
         </div>
     );
 }
