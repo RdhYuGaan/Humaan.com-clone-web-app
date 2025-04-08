@@ -3,29 +3,17 @@ import { NavBar } from './NavBar';
 import sample01 from '../assets/videos/sample01.mp4';
 import icon from '../assets/icons/icon.png';
 import LogoSection from './LogoSection';
+import Pic1 from '../assets/pictures/pic1.jpg';
+import sample02 from '../assets/videos/sample02.mp4';
+import Pictures from './Pictures';
 
 function Home() {
     const videoRef = useRef(null);
     const [isPaused, setIsPaused] = useState(false);
     const [isMuted, setIsMuted] = useState(true);
-    const [scrollY, setScrollY] = useState(0);
 
-    useEffect(() => {
-        let ticking = false;
 
-        const handleScroll = () => {
-            if (!ticking) {
-                window.requestAnimationFrame(() => {
-                    setScrollY(window.scrollY);
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
     const togglePlay = () => {
         if (!videoRef.current) return;
@@ -44,15 +32,7 @@ function Home() {
         setIsMuted(videoRef.current.muted);
     };
 
-    // Logic to scale up then scale down
-    let scale = 1;
-    if (scrollY < 800) {
-        scale = 1 + scrollY / 1500; // 1 to 2
-    } else if (scrollY >= 800 && scrollY <= 1600) {
-        scale = 2 - (scrollY - 800) / 800; // 2 back to 1
-    } else {
-        scale = 1;
-    }
+
 
     const bgColor = scrollY > 1600 ? 'bg-[#590080]' : 'bg-[#f3f3e9]';
 
@@ -65,9 +45,9 @@ function Home() {
                     <NavBar />
                 </div>
                 <div className="w-24 h-24 flex  items-center justify-center">
-                    <img 
+                    <img
                         className=" cursor-pointer"
-                        src={icon} 
+                        src={icon}
                         alt="icon" />
                 </div>
             </div>
@@ -80,20 +60,16 @@ function Home() {
             </div>
 
             {/* Video Section */}
-            <div className={`p-20 md:p-20 relative transition-colors duration-700 ${bgColor}`}>
+            <div className={`p-20 md:p-20 relative transition-colors duration-700 `}>
                 <div className="relative w-full">
                     <video
                         ref={videoRef}
                         className="w-full rounded-3xl shadow-lg"
                         style={{
-                            transform: `scale(${scale})`,
-                            transition: 'transform 0.6s ease-out',
-                            objectFit: 'cover', // Ensures the video covers the area smoothly
                         }}
                         src={sample01}
                         autoPlay
                         loop
-                        muted={isMuted}
                         playsInline
                     />
 
@@ -115,8 +91,11 @@ function Home() {
                 </div>
             </div>
 
-            {/* Purple Section After Video */}
+            {/* logo page */}
             <LogoSection />
+            {/* pictures page */}
+            <Pictures />
+
 
         </div>
     );
