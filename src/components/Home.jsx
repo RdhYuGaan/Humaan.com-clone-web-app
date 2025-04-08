@@ -35,20 +35,21 @@ function Home() {
         const handleScroll = () => {
             const section = sectionRef.current;
             if (!section) return;
-
+    
             const rect = section.getBoundingClientRect();
             const windowHeight = window.innerHeight;
-
+    
             if (rect.top < windowHeight && rect.bottom > 0) {
                 const visibleHeight = Math.min(windowHeight, rect.bottom) - Math.max(0, rect.top);
                 const visibilityRatio = visibleHeight / rect.height;
-
-                if (visibilityRatio >= 0.5) {
-                    const newScale = Math.min(1 + Math.min(visibilityRatio - 0.5, 0.5), 1.2);
-                    setScale(newScale);
-                    setBgColor(visibilityRatio >= 0.95 ? '#b488f1' : '#f3f3e9');
+    
+                const newScale = Math.min(1 + Math.min(visibilityRatio - 0.5, 0.5), 1.2);
+                setScale(visibilityRatio >= 0.5 ? newScale : 1);
+    
+                // ✅ Trigger color change if 60%+ visible and has scrolled up a bit
+                if (visibilityRatio >= 0.6 && rect.top < windowHeight / 2) {
+                    setBgColor('#b488f1');
                 } else {
-                    setScale(1);
                     setBgColor('#f3f3e9');
                 }
             } else {
@@ -56,16 +57,16 @@ function Home() {
                 setBgColor('#f3f3e9');
             }
         };
-
+    
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+    
 
     return (
         <div>
-            {/* header section */}
             <Header />
-            {/* Hero Text */}
+            {/* Hero Section */}
             <div className="bg-[#f3f3e9] px-10 pt-80 py-16">
                 <h1 className="text-9xl font-bold text-green-900 mb-8">
                     Extraordinary <br /> Digital Experiences
@@ -116,9 +117,9 @@ function Home() {
 
             {/* Pictures Section */}
             <Pictures />
-            {/* hero about section */}
-            <HeroAbout />
 
+            {/* Hero About Section */}
+            <HeroAbout />
         </div>
     );
 }
