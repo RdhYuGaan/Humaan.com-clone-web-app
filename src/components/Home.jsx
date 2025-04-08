@@ -60,7 +60,7 @@ function Home() {
             </div>
 
             {/* Video Section */}
-            <div className={`p-20 md:p-20 relative transition-colors duration-700 `}>
+            <div className={`p-20 md:p-20 relative bg-[#f3f3e9] transition-colors duration-700 `}>
                 <div className="relative w-full">
                     <video
                         ref={videoRef}
@@ -95,7 +95,6 @@ function Home() {
             <LogoSection />
             {/* pictures page */}
             <Pictures />
-
 
         </div>
     );
