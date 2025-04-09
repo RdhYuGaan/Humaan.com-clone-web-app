@@ -1,14 +1,14 @@
 import pic1 from '../assets/images/pic1.jpg';
-import pic2 from '../assets/images/pic2.jpeg';  
-import pic3 from '../assets/images/pic3.jpeg';
-import pic4 from '../assets/images/pic4.jpeg';
-import pic5 from '../assets/images/pic5.jpeg';
-import pic6 from '../assets/images/pic6.jpeg';
-import pic7 from '../assets/images/pic7.jpeg';
-import pic8 from '../assets/images/pic8.jpeg';
-import pic9 from '../assets/images/pic9.jpeg';
-import pic10 from '../assets/images/pic10.jpeg';
-import pic11 from '../assets/images/pic11.jpeg';
+import pic2 from '../assets/images/pic2.jpg';  
+import pic3 from '../assets/images/pic3.jpg';
+import pic4 from '../assets/images/pic4.jpg';
+import pic5 from '../assets/images/pic5.jpg';
+import pic6 from '../assets/images/pic6.jpg';
+import pic7 from '../assets/images/pic7.jpg';
+import pic8 from '../assets/images/pic8.jpg';
+import pic9 from '../assets/images/pic9.jpg';
+import pic10 from '../assets/images/pic10.jpg';
+import pic11 from '../assets/images/pic11.jpg';
 
 
 export const cardData = [

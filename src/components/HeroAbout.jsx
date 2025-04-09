@@ -62,7 +62,7 @@ export default function HeroAbout() {
                         <img
                             src={Pic1}
                             alt="Team"
-                            className="rounded-2xl shadow-lg w-[1000px] h-[600px] object-cover"
+                            className="rounded-2xl  w-[1000px] h-[600px] object-cover"
                         />
                     </div>
                 </div>
