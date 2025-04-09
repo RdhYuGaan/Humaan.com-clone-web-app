@@ -1,61 +1,70 @@
 import React from 'react'
+import { FaArrowRight } from "react-icons/fa";
+import { GiPolarStar } from "react-icons/gi";
+
 
 const Footer = () => {
     return (
-        <div className="min-h-screen flex flex-col justify-between bg-white text-black">
-            {/* Hero Section */}
-            <section className="w-full px-20 pt-12">
-                <h1 className="text-[64px] leading-tight font-semibold max-w-5xl">
+        <div className=" flex flex-col justify-between bg-white text-black">
+
+            <section className="w-full px-20 pb-30 pt-12">
+                <h1 className="text-[64px] leading-tight hover:text-[#24ef0e] cursor-pointer items-center justify-center font-semibold max-w-5xl">
                     Let’s make{" "}
-                    <span className="text-[#A2F89C] inline-block ">→</span>
+                    <span className="text-[#24ef0e] inline-block  align-middle"><FaArrowRight /></span>
                     <br />
                     something beautiful
                 </h1>
             </section>
-            <div className="space-y-2  px-20">
-                <div className="flex items-center text-bold gap-2 font-medium">
+            <div className="space-y-2 pb-20 px-20">
+                <div className="flex items-center font-bold gap-2 ">
                     <span className="text-lg">🌐</span> We work globally
                 </div>
                 <div>
-                    <a href="#" className="text-semibold inline-block">
-                        Submit a brief →
+                    <a href="#" className="font-semibold flex gap-2 items-center ">
+                        Submit a brief <FaArrowRight />
                     </a>
                 </div>
                 <div>
-                    <a href="mailto:contact@humaan.com" className="text-bold hover:underline">
+                    <a href="mailto:contact@humaan.com" className="font-bold hover:underline">
                         contact@humaan.com
                     </a>
                 </div>
             </div>
 
             {/* Footer Section */}
-            <footer className="w-full px-6 pt-10 pb-6 border-t border-[#A2F89C] mt-16">
-                <div className="flex flex-col md:flex-row justify-between items-start text-sm text-black space-y-6 md:space-y-0">
-                    {/* Left Block */}
+            <footer className="w-full px-6  pb-30 border-t border-[#A2F89C] mt-16">
+                <div className="flex flex-col md:flex-row font-bold pt-14 justify-between items-start text-sm text-black space-y-6 md:space-y-0">
+                   
                     <div className="space-y-2">
                         <div className="text-xs text-neutral-500">
-                            <span className="font-bold">humaan</span> © 2025{" "}
-                            <a href="#" className="underline">
-                                Privacy
-                            </a>
+                            <div className="font-bold text-md text-black">
+                                HUMAAAN ©2025{" "}
+                                <a href="#" className="underline font-semibold">
+                                    Privacy
+                                </a>
+                            </div>
                         </div>
-
-                    </div>
-
-                    {/* Right Block */}
-                    <div className="flex flex-col items-end space-y-4 text-right">
+                    </div>}
+                    <div className="flex  flex-col items-end space-y-4 text-right">
                         <div className="flex space-x-4 items-center">
-                            <span className="line-through hover:underline cursor-pointer">
-                                Twitter X
-                            </span>
-                            <span className="text-[#A2F89C]">✴</span>
-                            <a href="#" className="hover:underline">
-                                Instagram
-                            </a>
-                            <span className="text-[#A2F89C]">✴</span>
-                            <a href="#" className="hover:underline">
-                                LinkedIn
-                            </a>
+                            <div className='hover:bg-black hover:text-white rounded-3xl px-2 py-1 gap-2'>
+                                <button className="line-through  cursor-pointer">
+                                    Twitter X
+                                </button>
+                            </div>
+                            <div className='hover:bg-black hover:text-white rounded-3xl px-2 py-1 gap-2'>
+                                <button className="text-[#A2F89C]"><GiPolarStar /></button>
+                                <a href="#">
+                                    Instagram
+                                </a>
+                            </div>
+                            <div className='hover:bg-black hover:text-white rounded-3xl px-2 py-1 gap-2'>
+                                <button className="text-[#A2F89C]"><GiPolarStar /></button>
+                                <a href="#" >
+                                    LinkedIn
+                                </a>
+                            </div>
+
                         </div>
 
                     </div>
