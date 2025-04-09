@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import Tm from '../assets/images/7tm.png';
-import Canser from '../assets/images/canser.png';
-import Cc from '../assets/images/cc.png';
-import Curtain from '../assets/images/curtain.png';
-import Dollar from '../assets/images/dollar.png';
-import Dream11 from '../assets/images/dream11.png';
-import Tech from '../assets/images/tech.png';
-import West from '../assets/images/westren.png';
-import Rychiger from '../assets/images/rychiger.png';
-import Byjus from '../assets/images/byjus.png';
+import Tm from '../assets/logos/7tm.png';
+import Canser from '../assets/logos/canser.png';
+import Cc from '../assets/logos/cc.png';
+import Curtain from '../assets/logos/curtain.png';
+import Dollar from '../assets/logos/dollar.png';
+import Dream11 from '../assets/logos/dream11.png';
+import Tech from '../assets/logos/tech.png';
+import West from '../assets/logos/westren.png';
+import Rychiger from '../assets/logos/rychiger.png';
+import Byjus from '../assets/logos/byjus.png';
 
 const logos = [
   { src: Tm, alt: "7tm" },
