@@ -6,6 +6,7 @@ import Pictures from './Pictures';
 import HeroAbout from './HeroAbout';
 import Hero from './Hero';
 import Cards from './Cards';
+import Footer from './Footer';
 function Home() {
     return (
         <div>
@@ -22,6 +23,9 @@ function Home() {
             <HeroAbout />
             {/* Cards Section */}
             <Cards />
+            {/* footer */}
+            <Footer />
+
         </div>
     );
 }
