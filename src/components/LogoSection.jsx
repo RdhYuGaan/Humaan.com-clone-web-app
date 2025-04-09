@@ -32,25 +32,25 @@ const LogoSection = () => {
         const nextStartIndex = (logos.indexOf(prevLogos[0]) + 5) % logos.length;
         return logos.slice(nextStartIndex, nextStartIndex + 5);
       });
-    }, 6970); // Reduced interval to 6.97 seconds
+    }, 10000); 
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="bg-[#b488f1] h-screen flex flex-col items-center justify-center px-10 py-16 text-center">
-      <h1 className="text-4xl md:text-6xl font-bold text-white mb-16">
+      <h1 className="text-6xl md:text-8xl font-bold text-white mb-16">
         We design, build and ship world-class digital products for forward-thinking brands.
       </h1>
-      <div className="grid grid-cols-2 pt-20 lg:grid-cols-5 gap-10 relative transition-all duration-500 ease-in-out">
+      <div className="grid grid-cols-2 pt-20 lg:grid-cols-5 gap-15 relative transition-all duration-500 ">
         {currentLogos.map((logo, index) => (
           <img
             key={index}
             src={logo.src}
             alt={logo.alt}
-            className="h-16 object-contain transform opacity-0 transition-all duration-500 ease-in-out animate-fade-in"
+            className="h-20 object-contain transform opacity-0 transition-all duration-1000 ease-in-out "
             style={{
-              animation: `fadeInOut 1.97s ease-in-out ${index * .03}s infinite alternate`,
+              animation: `fadeInOut 5.97s ease-in-out ${index * .03}s infinite alternate`,
             }}
           />
         ))}

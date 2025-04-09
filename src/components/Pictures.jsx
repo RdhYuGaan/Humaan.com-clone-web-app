@@ -7,17 +7,17 @@ import Pic4 from '../assets/pictures/pic4.jpeg'
 
 const Pictures = () => {
     return (
-        <div className='bg-[#b488f1] min-h-screen flex flex-col items-center px-10 py-16 space-y-16'>
+        <div className='bg-[#b488f1] min-h-screen flex flex-col items-center px-4 md:px-10 py-8 md:py-16 space-y-8 md:space-y-16'>
             
             {/* Pic1 with video inside */}
-            <div className='relative w-[1600px] h-[1000px]  rounded-3xl shadow-xl overflow-hidden'>
+            <div className='relative w-full max-w-[1600px] h-[500px] md:h-[1000px] rounded-3xl shadow-xl overflow-hidden'>
                 <img
                     src={Pic1}
                     alt="icon"
-                    className='absolute top-0  left-0 w-full h-full object-cover'
+                    className='absolute top-0 left-0 w-full h-full object-cover'
                 />
-                <div className='absolute  flex  items-center justify-center  w-full h-full p-10'>
-                    <div className='w-[1100px] h-[700px] rounded-3xl overflow-hidden'>
+                <div className='absolute flex items-center justify-center w-full h-full p-4 md:p-10'>
+                    <div className='w-full max-w-[1100px] h-[300px] md:h-[700px] rounded-3xl overflow-hidden'>
                         <video
                             className='w-full h-full object-cover rounded-3xl'
                             src={sample03}
@@ -29,10 +29,9 @@ const Pictures = () => {
                 </div>
             </div>
 
-            
             {/* Grid Section */}
-            <div className='w-[1600px] h-[950px]'>
-                <section className="grid grid-cols-1 md:grid-cols-2 gap-16 h-full">
+            <div className='w-full max-w-[1600px] h-[500px] md:h-[950px]'>
+                <section className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 h-full">
                     <img
                         src={Pic2}
                         alt="Slim laptop"
@@ -47,7 +46,7 @@ const Pictures = () => {
             </div>
 
             {/* Bottom Picture (Pic4) */}
-            <div className='w-[1600px] h-[1000px] rounded-3xl shadow-xl overflow-hidden'>
+            <div className='w-full max-w-[1600px] h-[500px] md:h-[1000px] rounded-3xl shadow-xl overflow-hidden'>
                 <img
                     src={Pic4}
                     alt="icon"

@@ -40,8 +40,8 @@ export default function HeroAbout() {
                             <br /><br />
                             Our independent spirit drives our creative energy and approach to technology, allowing us to ensure quality and consistently deliver outstanding outcomes.
                         </p>
-                        <button className="mt-6 flex px-5 py-2 bg-[#0f241d] text-white gap-3 items-center justify-center  rounded-full text-sm hover:bg-[#1c3a2d] transition">
-                            About Us <FaArrowRight className='text-[#24ef0e]' />
+                        <button className="mt-6 flex px-5 py-2 bg-[#0f241d] text-white gap-3 items-center justify-center  rounded-full text-sm hover:bg-[#afdaab] hover:font-semibold hover:text-black transition">
+                            About Us <FaArrowRight className='text-[#24ef0e] hover:text-black' />
                         </button>
 
                         <div className="bg-[#f8f8ed] text-[#0f241d] w-full max-w-md divide-y divide-[#d5d5c9]">

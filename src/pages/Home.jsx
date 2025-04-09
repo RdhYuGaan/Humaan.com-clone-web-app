@@ -1,12 +1,12 @@
 import React, { useRef,  useEffect } from 'react';
-import Header from './Header';
-import MainVideo from './MainVideo';
-import LogoSection from './LogoSection';
-import Pictures from './Pictures';
-import HeroAbout from './HeroAbout';
-import Hero from './Hero';
-import Cards from './Cards';
-import Footer from './Footer';
+import Header from '../components/Header';
+import MainVideo from '../components/MainVideo';
+import LogoSection from '../components/LogoSection';
+import Pictures from '../components/Pictures';
+import HeroAbout from '../components/HeroAbout';
+import Hero from '../components/Hero';
+import Cards from '../components/Cards';
+import Footer from '../components/Footer';
 function Home() {
     return (
         <div>
