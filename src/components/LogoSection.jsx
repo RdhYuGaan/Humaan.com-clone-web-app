@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Tm from '../assets/logos/7tm.png';
 import Canser from '../assets/logos/canser.png';
 import Cc from '../assets/logos/cc.png';
@@ -9,6 +9,8 @@ import Tech from '../assets/logos/tech.png';
 import West from '../assets/logos/westren.png';
 import Rychiger from '../assets/logos/rychiger.png';
 import Byjus from '../assets/logos/byjus.png';
+import gsap from 'gsap';
+import { TweenMax } from 'gsap/gsap-core';
 
 const logos = [
   { src: Tm, alt: "7tm" },
@@ -37,9 +39,27 @@ const LogoSection = () => {
     return () => clearInterval(interval);
   }, []);
 
+  let h1=useRef(null);
+
+  useEffect(() => {
+    TweenMax.to(h1.current, {
+      visibility: "visible",
+      duration: 2.2,
+      opacity: 1,
+      y:-80,
+      ease: "power3.easOut"
+    });
+  }, []); 
+
+
+
+
+
   return (
     <div className="bg-[#b488f1] h-screen flex flex-col items-center justify-center px-10 py-16 text-center">
-      <h1 className="text-6xl md:text-8xl font-bold text-white mb-16">
+      <h1 
+        ref={h1}
+      className="text-6xl md:text-8xl font-bold text-white mb-16">
         We design, build and ship world-class digital products for forward-thinking brands.
       </h1>
       <div className="grid grid-cols-2 pt-20 lg:grid-cols-5 gap-15 relative transition-all duration-500 ">

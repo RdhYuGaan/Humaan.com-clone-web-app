@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { FaArrowRight } from "react-icons/fa";
 import { GiPolarStar } from "react-icons/gi";
 import { TfiWorld } from "react-icons/tfi";
+
+
 
 const Footer = () => {
     const words = ["great", "amazing", "awesome", "fantastic", "incredible", "delightful",
@@ -22,6 +24,8 @@ const Footer = () => {
 
         return () => clearInterval(interval);
     }, []);
+
+    const box=useRef();
 
     return (
         <div className="flex flex-col justify-between bg-white text-black">
@@ -55,8 +59,9 @@ const Footer = () => {
                     <a href="mailto:contact@humaan.com" className="font-bold hover:underline">
                         contact@humaan.com
                     </a>
-                </div>
+                </div>                    
             </div>
+            
 
             {/* Footer Links */}
             <footer className="w-full px-6 pb-30 border-t border-[#A2F89C] mt-16">
