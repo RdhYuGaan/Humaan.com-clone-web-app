@@ -5,9 +5,11 @@ import Pic2 from '../assets/pictures/pic2.jpeg'
 import Pic3 from '../assets/pictures/pic3.jpeg'
 import Pic4 from '../assets/pictures/pic4.jpeg'
 
-const Pictures = () => {
+const Pictures = ({backgroundColor="#b488f1"}) => {
     return (
-        <div className='bg-[#b488f1] min-h-screen flex flex-col items-center px-4 md:px-10 py-8 md:py-16 space-y-8 md:space-y-16'>
+        <div 
+            style={{ backgroundColor }}
+            className=' min-h-screen flex flex-col items-center px-4 md:px-10 py-8 md:py-16 space-y-8 md:space-y-16'>
             
             {/* Pic1 with video inside */}
             <div className='relative w-full max-w-[1600px] h-[500px] md:h-[1000px] rounded-3xl shadow-xl overflow-hidden'>
