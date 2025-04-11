@@ -25,25 +25,26 @@ const Footer = () => {
         return () => clearInterval(interval);
     }, []);
 
-    const box=useRef();
+    const box = useRef();
 
     return (
         <div className="flex flex-col justify-between bg-white text-black">
-            <section className="w-full px-20 pb-30 pt-12">
-                <h1 className="text-[64px] leading-tight hover:text-[#24ef0e] cursor-pointer items-center justify-center font-semibold max-w-5xl">
+            <div className="w-full px-20 pb-30 pt-12">
+                <h1 className="text-[64px] leading-tight cursor-pointer items-center justify-center font-semibold max-w-5xl group hover:text-[#24ef0e] transition-colors duration-300">
                     Let’s make{" "}
-                    <span className="text-[#24ef0e] inline-block align-middle"><FaArrowRight /></span>
+                    <span className="text-[#24ef0e] inline-block align-middle">
+                        <FaArrowRight />
+                    </span>
                     <br />
                     something{" "}
                     <span
-                        className={`inline-block transition-opacity duration-500 ease-in-out ${
-                            fade ? "opacity-100" : "opacity-0"
-                        } text-black hover:text-[#24ef0e]`}
+                        className={`inline-block transition-all duration-500 ease-in-out  ${fade ? "opacity-100" : "opacity-0"
+                            } group-hover:text-[#24ef0e]`}
                     >
                         {words[currentWordIndex]}
                     </span>
                 </h1>
-            </section>
+            </div>
 
             {/* Bottom Contact Info */}
             <div className="space-y-2 pb-20 px-20">
@@ -59,9 +60,9 @@ const Footer = () => {
                     <a href="mailto:contact@humaan.com" className="font-bold hover:underline">
                         contact@humaan.com
                     </a>
-                </div>                    
+                </div>
             </div>
-            
+
 
             {/* Footer Links */}
             <footer className="w-full px-6 pb-30 border-t border-[#A2F89C] mt-16">

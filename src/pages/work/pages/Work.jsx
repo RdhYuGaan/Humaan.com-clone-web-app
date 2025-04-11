@@ -11,9 +11,9 @@ const Work = () => {
 
 
     return (
-        <div className='bg-[#f8f8ed] '>
+        <div className='bg-[#f3f3e9] '>
             <Header />
-            <div className="bg-[#f3f3ea] min-h-screen flex flex-col items-start justify-start px-6 py-12">
+            <div className="bg-[#f3f3e9] flex flex-col items-start justify-start px-6 ">
                 <HeroContent />
                 <SubNav />
             </div>

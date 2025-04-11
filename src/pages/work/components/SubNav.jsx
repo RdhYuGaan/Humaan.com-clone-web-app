@@ -11,7 +11,7 @@ const SubNav = () => {
     const selected = location.pathname; // Get the current path
 
   return (
-    <div className="flex flex-wrap gap-4 rounded-full  pt-14 px-6 py-1">
+    <div className="flex flex-wrap gap-4  rounded-full  pt-14 px-6 py-1">
 
                         <button
                             onClick={() => handleNavigation('/work')}
