@@ -10,6 +10,9 @@ import CommunityPurpose from "./pages/work/pages/CommunityPurpose";
 import Innovation from "./pages/work/pages/Innovation";
 import Ui from "./pages/work/pages/Ui";
 
+
+
+
 const App = () => {
   return (
     <Router>
@@ -22,9 +25,7 @@ const App = () => {
          <Route path="/work/community" element={<CommunityPurpose/>} />
          <Route path="/work/innovation" element={<Innovation />} />
          <Route path="/work/ui-ux" element={<Ui />} />
-
-        {/* <Route path="expertise" element={<Expertise />} />
-        <Route path="/contact" element={<Contact />} />  */}
+        {/* <Route path="/contact" element={<Contact />} />  */}
 
         
       </Routes>
