@@ -19,7 +19,7 @@ const Hero = () => {
     <div className="bg-[#f3f3e9] px-10 pt-20 py-16">
       <h1
         ref={textItem}
-        className="text-9xl  font-bold text-green-900 mb-8"
+        className="text-6xl lg:text-9xl  font-bold text-green-900 mb-8"
       >
         Extraordinary <br /> Digital Experiences
       </h1>

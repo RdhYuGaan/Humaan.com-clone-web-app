@@ -22,7 +22,7 @@ export default function HeroAbout() {
     return (
         <div className="bg-[#f8f8ed] text-[#0f241d] min-h-screen flex items-center justify-center py-16 px-6 md:px-20">
             <div>
-                <h1 className="text-left text-6xl md:text-9xl font-semibold leading-tight">
+                <h1 className="text-left md:text-9xl  sm:text-5xl font-semibold leading-tight">
                     Great work for <br />
                     great{' '}
                     <span className="inline-block align-middle">
@@ -53,8 +53,10 @@ export default function HeroAbout() {
                                     <p className="text-2xl font-bold">{item.number}</p>
                                     <p className="text-right text-base leading-snug max-w-[60%]">{item.label}</p>
                                 </div>
+                                
                             ))}
                         </div>
+                        
                     </div>
 
                     {/* RIGHT SIDE */}
