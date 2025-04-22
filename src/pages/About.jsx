@@ -5,7 +5,7 @@ import Hero from '../components/Hero'
 
 const About = () => {
   return (
-    <div className='flex flex-col  bg-gray-100'>
+    <div className='flex flex-col bg-[#f3f3e9] '>
         <Header />
         <Hero />
     </div>

@@ -63,7 +63,7 @@ export const NavBar = () => {
             {/* Column 1 */}
             <div>
               <h3 className="font-bold mb-4">What We Do</h3>
-              <div className="space-y-2 text-sm">
+              <div className="space-y-4 text-sm">
                 <button className="w-full text-left hover:bg-blue-100 px-2 py-1 rounded">🌐 Websites</button>
                 <button className="w-full text-left hover:bg-green-100 px-2 py-1 rounded">💻 Web Apps</button>
                 <button className="w-full text-left hover:bg-yellow-100 px-2 py-1 rounded">📱 Mobile Apps</button>
@@ -75,7 +75,7 @@ export const NavBar = () => {
             {/* Column 2 */}
             <div>
               <h3 className="font-bold mb-4">Design & UX</h3>
-              <div className="space-y-2 text-sm">
+              <div className="space-y-4 text-sm">
                 <button className="w-full text-left hover:bg-indigo-100 px-2 py-1 rounded">🔍 User Research</button>
                 <button className="w-full text-left hover:bg-red-100 px-2 py-1 rounded">🎨 UX Design</button>
                 <button className="w-full text-left hover:bg-orange-100 px-2 py-1 rounded">🧩 UI Design</button>
@@ -87,7 +87,7 @@ export const NavBar = () => {
             {/* Column 3 */}
             <div>
               <h3 className="font-bold mb-4">Technology</h3>
-              <div className="space-y-2 text-sm">
+              <div className="space-y-4 text-sm">
                 <button className="w-full text-left hover:bg-gray-200 px-2 py-1 rounded">🧠 Headless</button>
                 <button className="w-full text-left hover:bg-blue-200 px-2 py-1 rounded">⚛️ React.js</button>
                 <button className="w-full text-left hover:bg-yellow-200 px-2 py-1 rounded">📦 Payload CMS</button>
@@ -99,7 +99,7 @@ export const NavBar = () => {
             {/* Column 4 */}
             <div>
               <h3 className="font-bold mb-4">Experience</h3>
-              <div className="space-y-2 text-sm">
+              <div className="space-y-4 text-sm">
                 <button className="w-full text-left hover:bg-gray-100 px-2 py-1 rounded">🏢 Commercial</button>
                 <button className="w-full text-left hover:bg-pink-100 px-2 py-1 rounded">❤️ Not for Profit</button>
                 <button className="w-full text-left hover:bg-yellow-100 px-2 py-1 rounded">💡 Innovation</button>

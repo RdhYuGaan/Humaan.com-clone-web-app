@@ -9,7 +9,7 @@ import NonforProfit from "./pages/work/pages/NonforProfit";
 import CommunityPurpose from "./pages/work/pages/CommunityPurpose";
 import Innovation from "./pages/work/pages/Innovation";
 import Ui from "./pages/work/pages/Ui";
-
+import Contact from "./pages/Contact";
 
 
 
@@ -25,7 +25,7 @@ const App = () => {
          <Route path="/work/community" element={<CommunityPurpose/>} />
          <Route path="/work/innovation" element={<Innovation />} />
          <Route path="/work/ui-ux" element={<Ui />} />
-        {/* <Route path="/contact" element={<Contact />} />  */}
+         <Route path="/contact" element={<Contact />} /> 
 
         
       </Routes>
