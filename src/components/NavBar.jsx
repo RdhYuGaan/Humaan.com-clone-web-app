@@ -54,6 +54,7 @@ export const NavBar = () => {
         >
           Contact
         </button>
+        
       </div>
 
       {/* Expertise Box */}
