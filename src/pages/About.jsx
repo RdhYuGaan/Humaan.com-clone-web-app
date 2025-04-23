@@ -3,7 +3,8 @@ import Header from '../components/Header'
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Pic5 from "../assets/pictures/Pic5.png"
-import ImageSlider from '../components/ImageSlider';
+import ImageSlider from '../components/aboutcompnents/ImageSlider';
+import ClientLogo from '../components/aboutcompnents/Clientlogo';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -63,6 +64,7 @@ const About = () => {
       <div className='text-black text-6xl text-justify font-semibold p-10 mt-20 max-w-[60%] mr-auto'>
       Since 2010 we’ve been working with amazing <span className='text-purple-600'>clients</span>  to create meaningful impact and compelling experiences.
       </div>
+      <ClientLogo/>
     </div>
   );
 }

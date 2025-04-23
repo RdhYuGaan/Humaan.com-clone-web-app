@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
-import { sliderImages } from '../data/cardData';
+import { sliderImages } from '../../data/cardData';
 
 // Image array
 
