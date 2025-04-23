@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Pic5 from "../assets/pictures/Pic5.png"
+import ImageSlider from '../components/ImageSlider';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,11 +32,11 @@ const About = () => {
   }, []);
 
   return (
-    <div className="bg-[#98c4bc] px-10 pt-0 py-16 relative overflow-hidden">
+    <div className="bg-gradient-to-b from-[#98c4bc] to-[#d8e4e6] px-10 pt-0 py-16 relative overflow-hidden">
       <Header />
-      
+
       {/* Reduced the margin-top from mt-20 to mt-8 to minimize gap */}
-      <div className='mt-20 relative z-10'>
+      <div className='mt-80 relative z-10'>
         <h1
           ref={textItem}
           className="text-9xl lg:text-[12rem] font-bold text-white"
@@ -44,12 +45,23 @@ const About = () => {
         </h1>
       </div>
 
-      <div className='w-full max-w-[1400px] h-[400px] md:h-[700px]  mx-auto relative z-20'>
+      <div className='w-full  h-[400px] md:h-[700px]  mx-auto relative z-20'>
         <img
           src={Pic5}
           alt="pic5"
           className='w-full h-full object-cover mx-auto'
         />
+      </div>
+      <div className='font-semibold text-7xl p-10 mt-20 text-left'>
+       <span className='text-purple-600'> Human experiences </span> are the foundation of everything we do – client relationships, team collaboration
+        and an unwavering focus on the end user. This philosophy is in our name, our core values and underpins
+        our approach to every engagement.
+
+
+      </div>
+      <ImageSlider/>
+      <div className='text-black text-6xl text-justify font-semibold p-10 mt-20 max-w-[60%] mr-auto'>
+      Since 2010 we’ve been working with amazing <span className='text-purple-600'>clients</span>  to create meaningful impact and compelling experiences.
       </div>
     </div>
   );

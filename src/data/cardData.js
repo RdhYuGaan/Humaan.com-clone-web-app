@@ -11,6 +11,8 @@ import pic10 from '../assets/images/pic10.jpg';
 import pic11 from '../assets/images/pic11.jpg';
 
 
+
+//home page card data
 export const cardData = [
     {
       id: 1,
@@ -112,3 +114,13 @@ export const cardData = [
       image: pic11
     }
   ];
+
+
+  //about slider data
+  export const sliderImages = [
+    pic1, pic2, pic3, pic4, pic5, pic6,
+    pic7, pic8, pic9, pic10, pic11
+  ];
+
+
+  
