@@ -5,6 +5,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import Pic5 from "../assets/pictures/Pic5.png"
 import ImageSlider from '../components/aboutcompnents/ImageSlider';
 import ClientLogo from '../components/aboutcompnents/Clientlogo';
+import Capabilities from '../components/aboutcompnents/Capabilities';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -54,17 +55,24 @@ const About = () => {
         />
       </div>
       <div className='font-semibold text-7xl p-10 mt-20 text-left'>
-       <span className='text-purple-600'> Human experiences </span> are the foundation of everything we do – client relationships, team collaboration
+        <span className='text-purple-600'> Human experiences </span> are the foundation of everything we do – client relationships, team collaboration
         and an unwavering focus on the end user. This philosophy is in our name, our core values and underpins
         our approach to every engagement.
 
 
       </div>
-      <ImageSlider/>
+      <ImageSlider />
       <div className='text-black text-6xl text-justify font-semibold p-10 mt-20 max-w-[60%] mr-auto'>
-      Since 2010 we’ve been working with amazing <span className='text-purple-600'>clients</span>  to create meaningful impact and compelling experiences.
+        Since 2010 we’ve been working with amazing <span className='text-purple-600'>clients</span>  to create meaningful impact and compelling experiences.
       </div>
-      <ClientLogo/>
+      <ClientLogo />
+      <div className='text-black text-6xl text-left font-semibold ml-20 p-10 mt-20 max-w-[80%] mr-auto'>
+        Our <span className='text-purple-600'>capabilities</span> are centred around our ability to deliver world-class websites and apps. We’re 100% in-house and work end-to-end, ensuring each project is delivered to the highest standard.
+      </div>
+      <Capabilities />
+
+      <div className='text-black text-6xl text-justify font-semibold p-10 mt-20 max-w-[60%] mr-auto'>
+        “It was one of the most extraordinary experiences we have had in 24 years of business. Why? Because you challenged us and helped us articulate something very special.”      </div>
     </div>
   );
 }

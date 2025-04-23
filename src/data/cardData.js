@@ -163,8 +163,40 @@ export const clients = [
   { name: "Tech", logo: Tech },
   { name: "Western", logo: Western },
   { name: "BYJUS", logo: fvf },
-  { name: "BYJUS", logo: fvf },
   { name: "Cancer", logo: Cancer },
   { name: "CC", logo: CC },
   { name: "Curtin", logo: Curtin },
+  { name: "Tech", logo: Tech },
+  { name: "Western", logo: Western },
+  { name: "BYJUS", logo: fvf },
+  { name: "Cancer", logo: Cancer },
+  { name: "CC", logo: CC },
 ];
+
+
+export const services = {
+  "Strategy & UX": [
+    "Digital Strategy", "User Research", "User Journey Mapping",
+    "Information Architecture", "Wireframing"
+  ],
+  "Design": [
+    "Interaction Design", "User Interface Design", "Design Systems",
+    "Prototyping & Animation", "Accessibility"
+  ],
+  "Development": [
+    "Websites", "eCommerce", "Web Applications",
+    "Mobile Apps (iOS & Android)", "Platform Integrations"
+  ],
+  "Technology": [
+    "Vue & React.js", "Headless Content Management",
+    "WordPress & WooCommerce", "Laravel", "Shopify"
+  ],
+  "Optimisation": [
+    "Website / App Review", "Performance Optimisation",
+    "Conversion Optimisation", "A/B Testing", "Ongoing Enhancements"
+  ],
+  "Support": [
+    "Project Management", "Website Hosting", "Website Maintenance",
+    "Performance & Security", "3rd Party Integrations"
+  ]
+};
