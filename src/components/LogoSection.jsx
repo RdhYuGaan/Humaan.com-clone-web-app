@@ -59,7 +59,7 @@ const LogoSection = () => {
     <div className="bg-[#b488f1] h-screen flex flex-col items-center justify-center px-10 py-16 text-center">
       <h1 
         ref={h1}
-      className="text-6xl md:text-8xl sm:text-3xl font-bold text-white mb-16">
+      className="text-6xl md:text-8xl sm:text-3xl font-bold md:mt-60 text-white mb-16">
         We design, build and ship world-class digital products for forward-thinking brands.
       </h1>
       <div className="grid grid-cols-2 pt-20 lg:grid-cols-5  sm:grid-cols-3 sm:grid-rows-1 gap-15 relative transition-all duration-500 ">

@@ -9,7 +9,7 @@ import Cards from '../components/Cards';
 import Footer from '../components/Footer';
 function Home() {
     return (
-        <div className='bg-[#f3f3e9]'>
+        <div className=''>
             <Header />
             {/* Hero Section */}
             <Hero />

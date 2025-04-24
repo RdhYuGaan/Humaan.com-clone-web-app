@@ -4,7 +4,7 @@ import { NavBar } from './NavBar';
 
 const Header = () => {
     return (
-        <div className="flex items-center justify-between w-full p-4  top-0 z-50">
+        <div className="flex items-center justify-between bg-[#f3f3e9] w-full p-4  top-0 z-50">
             {/* Logo */}
             <div className="font-bold text-xl text-black">HUMAAAN</div>
 
