@@ -4,7 +4,7 @@ import { FaPlus } from "react-icons/fa";
 
 const Achivements = () => {
     return (
-        <div className='min-h-screen py-10 px-5 '>
+        <div className=' py-10 px-5 '>
             <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5'>
                 {achievements.map((achievement, index) => (
                     <div key={index}
@@ -14,9 +14,12 @@ const Achivements = () => {
                     </div>
                 ))}
             </div>
-            <button className="flex items-center space-x-2 mt-10 cursor-pointer hover:bg-blue-300 bg-white text-black font-medium px-4 py-2 rounded-full shadow">
+            <button className="group flex items-center space-x-2 mt-10 cursor-pointer bg-white text-black
+                font-medium px-4 py-2 rounded-full shadow hover:bg-blue-300 transition-all duration-300 transform
+                 hover:scale-105"
+            >
                 <div className="bg-[#070035] text-[#82d7ff] rounded-full p-1">
-                <FaPlus />
+                    <FaPlus />
                 </div>
                 <span>See all awards</span>
             </button>
