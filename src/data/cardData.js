@@ -250,3 +250,13 @@ export const members = [
   { name: "Logan", roll: "AI Engineer", image: m9 },
   { name: "Theo", roll: "UI/UX Designer", image: m10 }
 ];
+
+
+
+export const achievements = [
+  { name: "Tm", logo: tm },
+  { name: "BYJUS", logo: fvf },
+  { name: "Cancer", logo: Cancer },
+  { name: "CC", logo: CC },
+  { name: "Curtin", logo: Curtin }
+]

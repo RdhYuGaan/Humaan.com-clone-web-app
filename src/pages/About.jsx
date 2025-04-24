@@ -7,6 +7,7 @@ import ImageSlider from '../components/aboutcompnents/ImageSlider';
 import ClientLogo from '../components/aboutcompnents/Clientlogo';
 import Capabilities from '../components/aboutcompnents/Capabilities';
 import Members from '../components/aboutcompnents/Members';
+import Achivements from '../components/aboutcompnents/Achivements';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -112,6 +113,7 @@ const About = () => {
     <div className="text-black text-6xl text-left font-semibold ml-20 p-10 mt-20 max-w-[80%] mr-auto">
     While our focus is on client success, we’re proud to have our work continually <span className="text-purple-600">recognised</span>  by the best of the best. 
       </div>
+      <Achivements/>
     
     </div>
   );
