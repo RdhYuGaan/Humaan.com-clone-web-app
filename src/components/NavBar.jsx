@@ -29,7 +29,7 @@ export const NavBar = () => {
         <button
           onClick={() => handleNavigation('/about')}
           className={`font-bold cursor-pointer p-2 rounded-2xl 
-          ${selected === '/about' ? 'bg-black text-[#24ef0e]' : 'hover:bg-gray-200 hover:text-[#24ef0e] transition-all duration-300'}`}
+          ${selected === '/about' ? 'bg-[#070035] text-[#82d7ff]' : 'hover:bg-gray-200 hover:text-[#24ef0e] transition-all duration-300'}`}
         >
           About
         </button>

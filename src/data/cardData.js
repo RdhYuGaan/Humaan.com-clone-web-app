@@ -133,22 +133,19 @@ export const sliderImages = [
   pic11,
 ];
 
-
-
-
 //about client data
 
 import tm from "../assets/logos/7tm.png";
 import fvf from "../assets/logos/byjus.png";
-import Cancer from  "../assets/logos/canser.png";
+import Cancer from "../assets/logos/canser.png";
 import CC from "../assets/logos/cc.png";
-import RYCHIGER from "../assets/logos/rychiger.png"
-import PayTo from "../assets/logos/payto.jpg"
-import Dream11 from "../assets/logos/dream11.png"
+import RYCHIGER from "../assets/logos/rychiger.png";
+import PayTo from "../assets/logos/payto.jpg";
+import Dream11 from "../assets/logos/dream11.png";
 import Dollar from "../assets/logos/dollar.png";
 import Curtin from "../assets/logos/curtain.png";
-import Western from  "../assets/logos/westren.png"
-import Tech from "../assets/logos/tech.png" ;
+import Western from "../assets/logos/westren.png";
+import Tech from "../assets/logos/tech.png";
 //about client data
 export const clients = [
   { name: "Tm", logo: tm },
@@ -173,30 +170,83 @@ export const clients = [
   { name: "CC", logo: CC },
 ];
 
-
 export const services = {
   "Strategy & UX": [
-    "Digital Strategy", "User Research", "User Journey Mapping",
-    "Information Architecture", "Wireframing"
+    "Digital Strategy",
+    "User Research",
+    "User Journey Mapping",
+    "Information Architecture",
+    "Wireframing",
   ],
-  "Design": [
-    "Interaction Design", "User Interface Design", "Design Systems",
-    "Prototyping & Animation", "Accessibility"
+  Design: [
+    "Interaction Design",
+    "User Interface Design",
+    "Design Systems",
+    "Prototyping & Animation",
+    "Accessibility",
   ],
-  "Development": [
-    "Websites", "eCommerce", "Web Applications",
-    "Mobile Apps (iOS & Android)", "Platform Integrations"
+  Development: [
+    "Websites",
+    "eCommerce",
+    "Web Applications",
+    "Mobile Apps (iOS & Android)",
+    "Platform Integrations",
   ],
-  "Technology": [
-    "Vue & React.js", "Headless Content Management",
-    "WordPress & WooCommerce", "Laravel", "Shopify"
+  Technology: [
+    "Vue & React.js",
+    "Headless Content Management",
+    "WordPress & WooCommerce",
+    "Laravel",
+    "Shopify",
   ],
-  "Optimisation": [
-    "Website / App Review", "Performance Optimisation",
-    "Conversion Optimisation", "A/B Testing", "Ongoing Enhancements"
+  Optimisation: [
+    "Website / App Review",
+    "Performance Optimisation",
+    "Conversion Optimisation",
+    "A/B Testing",
+    "Ongoing Enhancements",
   ],
-  "Support": [
-    "Project Management", "Website Hosting", "Website Maintenance",
-    "Performance & Security", "3rd Party Integrations"
-  ]
+  Support: [
+    "Project Management",
+    "Website Hosting",
+    "Website Maintenance",
+    "Performance & Security",
+    "3rd Party Integrations",
+  ],
 };
+
+import m1 from "../assets/members/m1.jpg";
+import m2 from "../assets/members/m2.jpg";
+import m3 from "../assets/members/m3.jpg";
+import m4 from "../assets/members/m4.jpg";
+import m5 from "../assets/members/m5.jpg";
+import m6 from "../assets/members/m6.jpg";
+import m7 from "../assets/members/m7.jpg";
+import m8 from "../assets/members/m8.jpg";
+import m9 from "../assets/members/m9.jpg";
+import m10 from "../assets/members/m10.jpg";
+
+
+
+export const members = [
+  { name: "Tom", roll: "Frontend Developer", image: m1 },
+  { name: "Jack", roll: "Backend Developer", image: m2 },
+  { name: "Oliver", roll: "AI Engineer", image: m3 },
+  { name: "Harry", roll: "UI/UX Designer", image: m4},
+  { name: "George", roll: "DevOps Engineer", image: m5 },
+  { name: "Charlie", roll: "Data Scientist", image: m6 },
+  { name: "Jacob", roll: "Project Manager", image: m7},
+  { name: "Alfie", roll: "Mobile App Developer", image: m8 },
+  { name: "Freddie", roll: "Frontend Developer", image: m9 },
+  { name: "James", roll: "Backend Developer", image: m10 },
+  { name: "William", roll: "AI Engineer", image: m1 },
+  { name: "Henry", roll: "UI/UX Designer", image: m2 },
+  { name: "Archie", roll: "DevOps Engineer", image: m3 },
+  { name: "Leo", roll: "Data Scientist", image: m4 },
+  { name: "Ethan", roll: "Project Manager", image: m5 },
+  { name: "Samuel", roll: "Mobile App Developer", image: m6 },
+  { name: "Daniel", roll: "Frontend Developer", image: m7 },
+  { name: "Oscar", roll: "Backend Developer", image: m8 },
+  { name: "Logan", roll: "AI Engineer", image: m9 },
+  { name: "Theo", roll: "UI/UX Designer", image: m10 }
+];
