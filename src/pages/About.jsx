@@ -114,7 +114,7 @@ const About = () => {
         While our focus is on client success, we’re proud to have our work continually <span className="text-purple-600">recognised</span>  by the best of the best.
       </div>
       <Achivements />
-      <div className="text-black text-6xl pt-40 pb-5 text-left font-semibold ml-20  max-w-[70%] ">
+      <div className="text-black text-6xl pt-40 pb-5 text-left font-semibold ml-20  max-w-[75%] ">
         Above all, we believe in human relationships, exceptional outcomes, and having fun along the way.
       </div>
       <Footer/>
