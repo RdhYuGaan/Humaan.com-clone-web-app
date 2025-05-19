@@ -7,9 +7,11 @@ import HeroAbout from '../components/HeroAbout';
 import Hero from '../components/Hero';
 import Cards from '../components/Cards';
 import Footer from '../components/Footer';
+import Gsap from '../components/gsap';
 function Home() {
     return (
         <div className='bg-[#f3f3e9]'>
+            <Gsap />
             <Header />
             {/* Hero Section */}
             <Hero />
@@ -25,6 +27,7 @@ function Home() {
             <Cards />
             {/* footer */}
             <Footer />
+            
 
         </div>
     );

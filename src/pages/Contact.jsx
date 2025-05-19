@@ -44,11 +44,11 @@ const Contact = () => {
                     </a>
                 </div>
             </div>
-    
+
             <FooterLinks className="border-t border-[#A2F89C]" />
         </div>
     );
-    
+
 }
 
 export default Contact
