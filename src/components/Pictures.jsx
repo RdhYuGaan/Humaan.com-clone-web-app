@@ -22,6 +22,7 @@ const Pictures = ({ backgroundColor = "#b488f1" }) => {
                 <div className='absolute flex items-center justify-center w-full h-full p-4 md:p-10'>
                     <div className='w-full max-w-[1100px] h-[300px] md:h-[700px] rounded-3xl overflow-hidden'>
                         <video
+                        
                             className='w-full h-full object-cover rounded-3xl'
                             src={sample03}
                             autoPlay

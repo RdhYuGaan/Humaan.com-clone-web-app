@@ -11,7 +11,7 @@ import Gsap from '../components/gsap';
 function Home() {
     return (
         <div className='bg-[#f3f3e9]'>
-            <Gsap />
+            {/* <Gsap /> */}
             <Header />
             {/* Hero Section */}
             <Hero />

@@ -1,12 +1,12 @@
 import React, { useRef, useState, useEffect } from 'react';
 import sample01 from '../assets/videos/sample01.mp4';
+import gsap from 'gsap';
 
 const MainVideo = () => {
   const videoRef = useRef(null);
-  const sectionRef = useRef(null);
+  const sectionRef = useRef(null);  
   const [isPaused, setIsPaused] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
-  const [scale, setScale] = useState(1);
   const [bgColor, setBgColor] = useState('#f3f3e9');
 
   const togglePlay = () => {
@@ -51,45 +51,48 @@ const MainVideo = () => {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const section = sectionRef.current;
-      if (!section) return;
+  const toAnim = gsap.to(videoRef.current, {
+    scale: 1.2,
+    scrollTrigger: {
+      trigger: videoRef.current,
+      start: "top 80%",
+      end: "top 20%",
+      markers: true,
+      scrub: true,
+    },
+  });
 
-      const rect = section.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
+  const fromAnim = gsap.from(videoRef.current, {
+    scale: 0.8,
+    scrollTrigger: {
+      trigger: videoRef.current,
+      start: "top -60%",
+      end: "top -80%",
+      markers: true,
+      scrub: true,
+    },
+  });
 
-      if (rect.top < windowHeight && rect.bottom > 0) {
-        const visibleHeight = Math.min(windowHeight, rect.bottom) - Math.max(0, rect.top);
-        const visibilityRatio = visibleHeight / rect.height;
+  return () => {
+    // ✅ Clean up the animations when component unmounts
+    toAnim.scrollTrigger.kill();
+    fromAnim.scrollTrigger.kill();
+  };
+}, []);
 
-        let newScale = 1;
-        if (visibilityRatio >= 0.5 && visibilityRatio < 1) {
-          newScale = 1 + (visibilityRatio - 0.5) * 0.4;
-        }
-        setScale(newScale);
-      } else {
-        setScale(1);
-      }
-    };
+  
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <div
-      ref={sectionRef}
+      
       className="p-20 md:p-20 relative transition-colors duration-700"
       style={{ backgroundColor: bgColor }}
     >
       <div className="relative w-full">
         <video
-          ref={videoRef}
-          className="w-full rounded-3xl shadow-lg transition-transform duration-500"
-          style={{
-            transform: `scale(${scale})`,
-            transformOrigin: 'center center',
-          }}
+          ref={videoRef}          
+          className=" rounded-3xl shadow-lg transition-transform duration-500"
           src={sample01}
           autoPlay
           loop
