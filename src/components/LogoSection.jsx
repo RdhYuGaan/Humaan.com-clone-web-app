@@ -11,6 +11,10 @@ import Rychiger from '../assets/logos/rychiger.png';
 import Byjus from '../assets/logos/byjus.png';
 import gsap from 'gsap';
 import { TweenMax } from 'gsap/gsap-core';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 
 const logos = [
   { src: Tm, alt: "7tm" },
@@ -27,6 +31,8 @@ const logos = [
 
 const LogoSection = () => {
   const [currentLogos, setCurrentLogos] = useState(logos.slice(0, 5));
+  const textItem = useRef(null);
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -34,22 +40,28 @@ const LogoSection = () => {
         const nextStartIndex = (logos.indexOf(prevLogos[0]) + 5) % logos.length;
         return logos.slice(nextStartIndex, nextStartIndex + 5);
       });
-    }, 10000); 
+    }, 10000);
 
     return () => clearInterval(interval);
   }, []);
 
-  let h1=useRef(null);
+
 
   useEffect(() => {
-    TweenMax.to(h1.current, {
-      visibility: "visible",
-      duration: 2.2,
+  if (textItem.current) {
+    gsap.to(textItem.current, {
+      duration: 2,
       opacity: 1,
-      y:-80,
-      ease: "power3.easOut"
+      y: -60,
+      scrollTrigger: {
+        trigger: textItem.current,
+        start: "top 30%",
+        end:"top 0%",
+        markers:true,
+      },
     });
-  }, []); 
+  }
+}, []);
 
 
 
@@ -57,9 +69,9 @@ const LogoSection = () => {
 
   return (
     <div className="bg-[#b488f1] h-screen flex flex-col items-center justify-center px-10 py-16 text-center">
-      <h1 
-        ref={h1}
-      className="text-6xl md:text-8xl sm:text-3xl font-bold md:mt-60 text-white mb-16">
+      <h1
+        ref={textItem}
+        className="text-6xl md:text-8xl sm:text-3xl font-bold md:mt-60 text-white mb-16">
         We design, build and ship world-class digital products for forward-thinking brands.
       </h1>
       <div className="grid grid-cols-2 pt-20 lg:grid-cols-5  sm:grid-cols-3 sm:grid-rows-1 gap-15 relative transition-all duration-500 ">
