@@ -49,7 +49,7 @@ const About = () => {
       },
       onLeaveBack: () => {
         gsap.to(containerRef.current, {
-          backgroundColor: '#d8e4e6', // Original background color
+          backgroundColor: '#d8e4e6', 
           duration: 0.5,
         });
       },
